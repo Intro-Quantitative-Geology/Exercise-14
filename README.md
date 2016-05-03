@@ -1,16 +1,42 @@
 # Lab-exercise-7
-This exercise is part 2 of the exercises on thermochronology.
-In this exercise you will modify your Python code to load a data file of measured thermochronometer ages, compare the measured ages to predicted ages from your Python code using a goodness-of-fit equation, and plot the results.
-The goal is to try to minimize the misfit between the predicted and measured thermochronometer ages, and quantify the long-term exhumation rates in the Bhutan Himalaya from different thermochronometers.
+This exercise is part 2 of the exercises on thermochronology. In this exercise you will modify your Python code to load a data file of measured thermochronometer ages, compare the measured ages to predicted ages from your Python code using a goodness-of-fit equation, and plot the results. The goal is to try to minimize the misfit between the predicted and measured thermochronometer ages, and quantify the long-term exhumation rates in the Bhutan Himalaya from different thermochronometers.
 
 ## Overview
-The overall goal of this exercise is to interpret a thermochronometer dataset from the Himalaya of Bhutan.
-The interpretation entails determining long-term average rock exhumation rates from rock samples analyzed using apatite and zircon (U-Th)/He and muscovite <sup>40</sup>Ar/<sup>39</sup>Ar thermochronology.
-As you will recall, our exercise last week used a simple 1-D transient solution to the advection-diffusion equation to calculate a temperature-depth profile in the Earth, which was then used to predict thermochronometer ages based on Dodson's method.
-In that model we specified a rock exhumation rate and observed variations in the thermochronometer ages as a function of exhumation rate.
-This week we will compare those predicted thermochronometer ages to data from Bhutan with the goal of minimizing the misfit between the measured and predicted thermochronometer ages by varying the specified rock exhumation rate, which will allow us to define a best-fit exhumation rate (or exhumation history) for the Himalaya of Bhutan.
-For this exercise, we will be using data from [Coutand et al., 2014](https://dx.doi.org/10.1002/2013JB010891) and [Stüwe and Foster, 2001](https://dx.doi.org/10.1016/S1367-9120(00)00018-3) (PDFs available on the [course Moodle page](https://moodle.helsinki.fi/course/view.php?id=12453#section-4)).
+![Bhutan Himalaya](Images/Bhutan_Himalaya.png)<br/>
+*The Himalaya in Bhutan. [Image source](http://commons.wikimedia.org/wiki/File:View_of_Gasa_Dzong.JPG).*
 
+The overall goal of this exercise is to interpret a thermochronometer dataset from the Himalaya of Bhutan. The interpretation entails determining long-term average rock exhumation rates from rock samples analyzed using apatite and zircon (U-Th)/He and muscovite <sup>40</sup>Ar/<sup>39</sup>Ar thermochronology. As you will recall, our exercise last week used a simple 1-D transient solution to the advection-diffusion equation to calculate a temperature-depth profile in the Earth, which was then used to predict thermochronometer ages based on Dodson's method. In that model we specified a rock exhumation rate and observed variations in the thermochronometer ages as a function of exhumation rate. This week we will compare those predicted thermochronometer ages to data from Bhutan with the goal of minimizing the misfit between the measured and predicted thermochronometer ages by varying the specified rock exhumation rate, which will allow us to define a best-fit exhumation rate (or exhumation history) for the Himalaya of Bhutan. For this exercise, we will be using data from [Coutand et al., 2014](https://dx.doi.org/10.1002/2013JB010891) and [Stüwe and Foster, 2001](https://dx.doi.org/10.1016/S1367-9120(00)00018-3) (PDFs available on the [course Moodle page](https://moodle.helsinki.fi/course/view.php?id=12453#section-4)).
+
+## Problem 1 - Comparing measured and predicted thermochronometer ages, again
+In order to be able to compare our predicted thermochronometer ages to some data, we'll first need to load the data file. You are welcome to use the example script file above to make your modifications (I have noted where to make changes), but it might be better to copy your Python script from last week and make changes to that code.
+
+1. Using the past exercises as examples (look at those codes :smile:), you should add code to bottom your Python script (after the predicted thermochronometer ages are calculated) to read a data file and store the contents in different variables in the code. The data file has a header that lists the data contained in each column. You may want to look at the data file in a text editor in order to give logical names to the variables in the data file.
+2. Once you have added the code to read the data file, you will want to calculate goodness-of-fit values for each thermochronometer system, as well as a total goodness-of-fit value for all of the age data. You should use the same goodness-of-fit equation we have used in the previous exercises, and be sure to divide the goodness-of-fit value by the number of measured ages for each thermochronometer. The goodness of fit equation you should use is
+
+    ![Goodness-of-fit equation](Images/Equation1.png)<br/>
+    where *n* is the number of ages, *O*<sub>*i*</sub> is the *i*th measured age, *E*<sub>*i*</sub> is the *i*th predicted age and *σ*<sub>*i*</sub> is the *i*th standard deviation.
+    
+    :heavy_exclamation_mark: **NOTE**: Be aware that measured ages are listed for each sample location in the data file, but not every sample has been analyzed for each different thermochronometer system. Thus, there are ages of '-9999' listed in the data file. Those ages are listed there to indicate there is no corresponding measured age for that thermochronometer system at that sample location. Those ages should be ignored in your goodness-of-fit calculation using an `if` statement.
+3. The last task is to produce a useful plot. For this, we will again use the `plt.subplot()` command to make a plot that shows (1) the predicted geotherm and particle temperature-depth history in the upper panel (i.e., the plot from Laboratory Exercise 6), and (2) the predicted and measured age data on the lower panel.
+  - For the lower plot, the *x*-axis should plot latitude and the *y*-axis should plot thermochronometer age, including error bars for the measured ages.
+  - It may help to plot the different thermochronometer systems with different color symbols.
+  - The predicted ages can be shown using lines of constant age that have a range that includes the entire range of latitude of the measured age data.
+  - This plot should also list the goodness-of-fit values for each thermochronometer system, as well as the total goodness-of-fit for the age dataset.
+
+## Problem 2 - "Fitting" thermochronometer data
+
+
+
+
+
+
+
+
+
+
+
+
+For this exercise, submit a copy of your Python code and the plot you produce for point 3 above with an advection velocity of 0.5 mm/a. Include a descriptive figure caption as well.
 
 
 This two-part set of exercises is designed to give you a better understanding of thermochronology and the thermal field in the Earth's crust.
