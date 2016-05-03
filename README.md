@@ -20,7 +20,7 @@ Now we are ready to start.
 
 ## Overview
 ![Bhutan Himalaya](Images/Bhutan_Himalaya.png)<br/>
-*The Himalaya in Bhutan. [Image source](http://commons.wikimedia.org/wiki/File:View_of_Gasa_Dzong.JPG).*
+*Figure 1. The Himalaya in Bhutan. [Image source](http://commons.wikimedia.org/wiki/File:View_of_Gasa_Dzong.JPG).*
 
 The overall goal of this exercise is to interpret a thermochronometer dataset from the Himalaya of Bhutan. The interpretation entails determining long-term average rock exhumation rates from rock samples analyzed using apatite and zircon (U-Th)/He and muscovite <sup>40</sup>Ar/<sup>39</sup>Ar thermochronology. As you will recall, our exercise last week used a simple 1-D transient solution to the advection-diffusion equation to calculate a temperature-depth profile in the Earth, which was then used to predict thermochronometer ages based on Dodson's method. In that model we specified a rock exhumation rate and observed variations in the thermochronometer ages as a function of exhumation rate. This week we will compare those predicted thermochronometer ages to data from Bhutan with the goal of minimizing the misfit between the measured and predicted thermochronometer ages by varying the specified rock exhumation rate, which will allow us to define a best-fit exhumation rate (or exhumation history) for the Himalaya of Bhutan. For this exercise, we will be using data from [Coutand et al., 2014](https://dx.doi.org/10.1002/2013JB010891) and [Stüwe and Foster, 2001](https://dx.doi.org/10.1016/S1367-9120(00)00018-3) (PDFs available on the [course Moodle page](https://moodle.helsinki.fi/course/view.php?id=12453#section-4)).
 
@@ -51,7 +51,7 @@ Using the modified Python script above, you goal is now to find an average long-
 
 1. The 1 plot requested for problem 1 with an advection velocity of 0.5 mm/a and the 4 plots requested for problem 2.
 2. Figure captions for each plot describing the plot as if it were in a scientific journal article.
-4. A copy of your modified Python scripts used for Problems 1 and 2
+4. A copy of your modified Python script used for Problems 1 and 2
 
 **NOTE**: You may want to reference these plots in your final report on these exercises, so be sure to keep the copies of the plot files.
 
