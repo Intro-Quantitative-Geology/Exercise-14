@@ -1,4 +1,4 @@
-# Exercise 14
+# Exercise 14: Quantitative thermochronology, part II
 This exercise is part 2 of the exercises on thermochronology.
 In this exercise you will modify [your Python code](age_predict_1D.py) to load [a data file of measured thermochronometer ages](Bhutan_age_data.txt), compare the measured ages to predicted ages from your Python code using a goodness-of-fit equation, and plot the results.
 The goal is to try to minimize the misfit between the predicted and measured thermochronometer ages, and quantify the long-term exhumation rates in the Bhutan Himalaya from different thermochronometers.
